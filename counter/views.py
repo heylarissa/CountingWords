@@ -13,7 +13,7 @@ def index(request):
         if len(text) > 0:
  
             regex = re.compile('[^\w\,\.\d]+')
-            word = len(re.split(regex, text))
+            word = len(re.split(regex, text.strip()))
 
             i = True
  
