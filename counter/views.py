@@ -9,11 +9,14 @@ def index(request):
     if request.method == 'POST':
  
         text = request.POST['texttocount']
+        lowertext = text.lower()
 
         if len(text) > 0:
  
             regex = re.compile('[^\w\,\.\d]+')
-            word = len(re.split(regex, text.strip()))
+            wordsList = re.split(regex, lowertext.strip())
+            wordsList = set(wordsList)
+            word = len(wordsList)
 
             i = True
  
